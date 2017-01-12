@@ -6,16 +6,17 @@
 [![David](https://img.shields.io/david/danielo515/object-translate.svg?style=flat-square)](https://david-dm.org/danielo515/object-translate)
 [![Coverage Status](https://img.shields.io/coveralls/danielo515/object-translate.svg?style=flat-square)](https://coveralls.io/github/danielo515/object-translate)
 
-> Easily turn objects into other objects. Easy and composable
+> Easily turn objects into other objects.
 
-### Usage
+Object-translate is a small utility to reshape objects intuitively.
 
-```js
-import objectTranslate from 'object-translate';
+You just have to describe the shape that you want to obtain with a simple (or complex mapping) object and create a converter.
+A converter is a function that will take any object as input and will try to generate another object that matches your description.
+The converter is created once and can be used it as many times as you want, pass it around as parammeter,
+use it on functional programming and so on.
 
-```
 
-### Installation
+## Installation
 
 Install via [yarn](https://github.com/yarnpkg/yarn)
 
@@ -26,31 +27,86 @@ or npm
 	npm install object-translate (--save-dev)
 
 
-### configuration
+## Usage
 
-You can pass in extra options as a configuration object (➕ required, ➖ optional, ✏️ default).
+### Instantiation
+
+You could pass two configuration objects when instantiating a converter (➕ required, ➖ optional, ✏️ default) .
 
 ```js
-import objectTranslate from 'object-translate';
+import ObjectTranslate from 'object-translate';
 
+const converter = ObjectTranslate( mappings, defaults );
 ```
 
-➖ **property** ( type ) ` ✏️ default `
-<br/> 📝 description
-<br/> ❗️ warning
-<br/> ℹ️ info
-<br/> 💡 example
+➕  **mappings** ( Object )
+<br/> 📝 Description: The map describing the transformation
+<br/> 💡 Example: `{userName: 'user.name', surname: 'user.surname' }`
 
-### methods
+➖ **defaults** ( Object ) ` ✏️ {} `
+<br/> 📝 Description: An object containing default values for the missing properties
+<br/> ❗️ Warning: The default values should be on the same path as they would be on the object being transformed
+<br/> ℹ️ Info: Defaults to an empty object
+<br/> 💡 Example: `{user: { surname:'not provided'}}`
 
-#### #name
+### Mappings
+
+Mappings are objects describing the final shape you want to obtain from an object when the converter is applied to it.
+The values on a map description can be of three types:
+
+ - Annstring describing from where do you want to pick that property
+ - An object with an array of alternative paths to look into
+ - An object with a function which should process the extracted value.
+
+#### #String path
+
+This is the most basic mapping method. It is just a string in dot notation describing the path were you expect
+the value to be located at.
 
 ```js
-objectTranslate
+{ username: 'response.data.user.name' }
+```
 
+#### #Alternatives
+
+When you are not sure of the path that you should use ( was it address or just addr? was it camelCase or snake-case? )
+you can provide an array of alternative paths.
+Alternatives should be inside an object with a property called alternatives.
+
+```js
+{ username: { alternatives: ['response.data.user.name','response.user.name', 'response.data.user.Name'] } }
+```
+
+#### #Function processor
+
+If the value that you want to extract requires a special treatement (for example, convert it to lower case),
+you can specify a function to process such value. This function is called a processor
+The processor is executed with the original value as the first parammeter and the full object
+being converted as the second argument.
+
+```js
+{ username: { path: 'response.data.user.name'}, processor: (name) => name.toLowerCase()}
 ```
 
 ### Examples
+
+This is a very basic example
+
+```js
+const ObjectTranslate = require(`object-translate`);
+
+/** This describes the sape you want to get as result */
+const mappings = {
+  username: `response.data.user.name`,
+  information: {
+    zipCode: {alternatives: [`response.data.user.addr.zip`, `response.data.user.address.zip`]}
+  }
+};
+
+const converter = ObjectTranslate(mappings);
+
+console.log( converter(serverResponse) );
+```
 
 See [`example`](example/script.js) folder or the [runkit](https://runkit.com/danielo515/object-translate) example.
 

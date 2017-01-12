@@ -114,11 +114,9 @@ describe(`object-translate`, () => {
       const mapping = {
 
         name: {
-          path: `name`,
           alternatives: [`user.Name`, `user.name`]
         },
         postalCode: {
-          path: `postalCode`,
           alternatives: [`user.address.zip`, `user.addr.zip`]
         }
 
