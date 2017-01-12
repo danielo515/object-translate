@@ -1,6 +1,6 @@
 {
   "name": "object-translate",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Easily turn objects into other objects.",
   "main": "cjs/index.js",
   "browser": "dist/objectTranslate.js",
