@@ -1,0 +1,5 @@
+{
+  "globalDependencies": {
+    "object-path": "registry:dt/object-path#0.9.0+20160510002910"
+  }
+}
