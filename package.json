@@ -1,10 +1,13 @@
 {
   "name": "object-translate",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Easily turn objects into other objects.",
   "main": "cjs/index.js",
   "browser": "dist/objectTranslate.js",
   "module": "es/index.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "jsxnext:main": "es/index.js",
   "files": [
     "dist",
