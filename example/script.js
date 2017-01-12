@@ -1,0 +1,1 @@
+const objectTranslate = require(`../`);
