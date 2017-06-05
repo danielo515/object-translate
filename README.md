@@ -6,7 +6,7 @@
 [![David](https://img.shields.io/david/danielo515/object-translate.svg?style=flat-square)](https://david-dm.org/danielo515/object-translate)
 [![Coverage Status](https://img.shields.io/coveralls/danielo515/object-translate.svg?style=flat-square)](https://coveralls.io/github/danielo515/object-translate)
 [![npm](https://img.shields.io/npm/dt/object-translate.svg?style=flat-square)](https://www.npmjs.com/package/object-translate)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/)
 
 
 > Easily turn objects into other objects.

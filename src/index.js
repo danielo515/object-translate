@@ -29,7 +29,8 @@ module.exports = (mapDefinition, defaults) => {
       }
       if (hasProcessor) {
         if (!hasAlternatives && !item.path) {
-          return;
+          console.warn(`You have provided a processor func. without path or alternatives. Null will be returned`);
+          return null;
         }
         path = hasAlternatives
           ? path
@@ -38,7 +39,9 @@ module.exports = (mapDefinition, defaults) => {
       }
     }
 
-    const originalValue = Op[getMethod](originalObj, path) || Op[getMethod](defaults, path);
+    let originalValue = Op[ getMethod ](originalObj, path);
+    // try to use a default value  ONLY if the original value is undefined. Values like false, 0, '', null, will pass as they are
+    originalValue = originalValue === undefined ? Op[ getMethod ](defaults, path) : originalValue;
 
     const newValue = process(originalValue, originalObj);
 
