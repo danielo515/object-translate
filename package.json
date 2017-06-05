@@ -1,6 +1,6 @@
 {
   "name": "object-translate",
-  "version": "0.1.3",
+  "version": "1.0.0",
   "description": "Easily turn objects into other objects.",
   "main": "cjs/index.js",
   "browser": "dist/objectTranslate.js",
@@ -22,7 +22,8 @@
     "prepublish": "npm run build",
     "precommit": "npm run lint:test",
     "prepush": "npm run lint:test",
-    "release": "conventional-recommended-bump && release-it && npm run changelog",
+    "release": "release-it",
+    "recommend-bump": "conventional-recommended-bump -p angular",
     "changelog": "standard-changelog",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "lint": "npm run lint:eslint",
