@@ -170,6 +170,48 @@ describe(`object-translate`, () => {
       expect(result).toEqual(expected);
 
     });
+    it(`Function processor without path or alternatives returns null`, () => {
+
+      const original = {
+        a: {
+          b: {
+            c: `cvalue`
+          }
+        },
+        d: {
+          e: {
+            f: `fvalue`
+          }
+        }
+      };
+      const expected = {
+        more: {
+          deep: {
+            cvalue: null,
+            fvalue: `fvalue from function`
+          }
+        }
+      };
+      const processor = o => (`${o} from function`);
+      const mapping = {
+        more: {
+          deep: {
+            cvalue: {
+              processor,
+            },
+            fvalue: {
+              processor,
+              path: `d.e.f`
+            }
+          }
+        }
+      };
+
+      const converter = Generator(mapping);
+      const result = converter(original);
+      expect(result).toEqual(expected);
+
+    });
     it(`Using a function for concatenating two values`, () => {
 
       const original = {
