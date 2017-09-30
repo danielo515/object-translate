@@ -1,5 +1,7 @@
 # object-translate
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/danielo515/object-translate.svg)](https://greenkeeper.io/)
+
 ![Node](https://img.shields.io/node/v/object-translate.svg?style=flat-square)
 [![NPM](https://img.shields.io/npm/v/object-translate.svg?style=flat-square)](https://www.npmjs.com/package/object-translate)
 [![Travis](https://img.shields.io/travis/danielo515/object-translate/master.svg?style=flat-square)](https://travis-ci.org/danielo515/object-translate)
