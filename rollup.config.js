@@ -22,9 +22,11 @@ const isProd = process.env.NODE_ENV === `production`;
 if (isProd) plugins.push(uglify());
 
 export default {
-  entry: `src/index.js`,
+  input: `src/index.js`,
   plugins,
-  dest: `dist/${name}${isProd ? `.min` : ``}.js`,
-  moduleName: name,
-  format: `umd`
+  output: {
+    file: `dist/${name}${isProd ? `.min` : ``}.js`,
+    name: name,
+    format: `umd`
+  }
 };
