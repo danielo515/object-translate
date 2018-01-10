@@ -57,7 +57,7 @@
     "eslint-config-devine": "^1.6.1",
     "eslint-plugin-babel": "^4.0.0",
     "husky": "^0.14.3",
-    "jest": "^21.1.0",
+    "jest": "^22.0.5",
     "release-it": "^4.1.0",
     "rimraf": "^2.5.4",
     "rollup": "^0.50.0",
