@@ -66,7 +66,7 @@
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-uglify": "^2.0.1",
     "rollup-plugin-filesize": "^1.4.2",
-    "standard-changelog": "^1.0.1"
+    "standard-changelog": "^1.0.17"
   },
   "dependencies": {
     "object-path": "^0.11.3",
