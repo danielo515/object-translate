@@ -9,7 +9,7 @@ function err() {
     msg "$*" 1>&2
 }
 
-if  [ ${node_version:1:1} -gt 6 ]; then
+if  [ ${node_version:1:1} -lt 8 ]; then
     err "Nothing to commit on node 6"
     exit 0
 fi
