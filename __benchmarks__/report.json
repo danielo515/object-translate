@@ -242,5 +242,67 @@
       "started": "2018-05-26T14:56:37.920Z",
       "ended": "2018-05-26T14:56:49.344Z"
     }
+  },
+  "N9.11.1": {
+    "1.0.1": {
+      "platform": {
+        "description": "Node.js 9.11.1 on Linux 64-bit",
+        "layout": null,
+        "manufacturer": null,
+        "name": "Node.js",
+        "prerelease": null,
+        "product": null,
+        "ua": null,
+        "version": "9.11.1",
+        "os": {
+          "architecture": 64,
+          "family": "Linux",
+          "version": null
+        }
+      },
+      "files": [
+        {
+          "name": "/home/travis/build/danielo515/object-translate/__benchmarks__/report-json/src/_basic.js",
+          "suites": [
+            {
+              "name": "4 nest levels",
+              "benchmarks": [
+                {
+                  "name": "Basic converter",
+                  "hz": 62536.01021966936,
+                  "aborted": false,
+                  "stats": {
+                    "moe": 0.0000014367802014040815,
+                    "rme": 8.985050135842425,
+                    "sem": 7.330511231653478e-7,
+                    "deviation": 0.000005582751029025987,
+                    "mean": 0.000015990786692136484,
+                    "variance": 3.116710905209072e-11
+                  }
+                },
+                {
+                  "name": "Using defaults",
+                  "hz": 50884.13543674545,
+                  "aborted": false,
+                  "stats": {
+                    "moe": 0.0000011512616181114265,
+                    "rme": 5.858095209910854,
+                    "sem": 5.873783765874626e-7,
+                    "deviation": 0.000004807899222938126,
+                    "mean": 0.000019652490730497122,
+                    "variance": 2.311589493792904e-11
+                  }
+                }
+              ],
+              "fastest": [
+                "Basic converter"
+              ]
+            }
+          ]
+        }
+      ],
+      "started": "2018-05-26T15:02:21.683Z",
+      "ended": "2018-05-26T15:02:33.109Z"
+    }
   }
 }
