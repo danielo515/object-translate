@@ -50,13 +50,14 @@
     "babel-core": "^6.17.0",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-es2015": "^6.16.0",
+    "benchmarked": "^2.0.0",
     "benchr": "^4.3.0",
     "commitizen": "^2.9.6",
     "conventional-recommended-bump": "^1.0.0",
     "coveralls": "^3.0.0",
     "cross-env": "^5.1.3",
     "cz-conventional-changelog": "^2.0.0",
-    "eslint": "^4.7.1",
+    "eslint": "^4.19.1",
     "eslint-config-devine": "^1.6.1",
     "eslint-plugin-babel": "^4.0.0",
     "husky": "^0.14.3",
@@ -69,8 +70,7 @@
     "rollup-plugin-filesize": "^1.4.2",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-uglify": "^3.0.0",
-    "standard-changelog": "^1.0.1",
-    "benchmarked": "^2.0.0"
+    "standard-changelog": "^1.0.1"
   },
   "dependencies": {
     "object-path": "^0.11.3",
