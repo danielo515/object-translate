@@ -13,7 +13,7 @@ if  [ ${node_version:1:1} -gt 6 ]; then
     err "Nothing to commit on node 6"
     exit 0
 fi
-
+git add .
 # make Travis CI skip this build
 if ! git commit -m "Travis CI update [ci skip]"; then
     err "failed to commit updates"
