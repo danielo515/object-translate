@@ -59,6 +59,66 @@
       ],
       "started": "2018-05-26T12:17:53.847Z",
       "ended": "2018-05-26T12:18:07.051Z"
+    },
+    "1.0.1": {
+      "platform": {
+        "description": "Node.js 8.9.4 on Win32 64-bit",
+        "layout": null,
+        "manufacturer": null,
+        "name": "Node.js",
+        "prerelease": null,
+        "product": null,
+        "ua": null,
+        "version": "8.9.4",
+        "os": {
+          "architecture": 64,
+          "family": "Win32",
+          "version": null
+        }
+      },
+      "files": [
+        {
+          "name": "C:\\Users\\rdani\\Dropbox\\programacion\\node\\object-translate\\__benchmarks__\\report-json/src/_basic.js",
+          "suites": [
+            {
+              "name": "4 nest levels",
+              "benchmarks": [
+                {
+                  "name": "Basic converter",
+                  "hz": 141538.99006647628,
+                  "aborted": false,
+                  "stats": {
+                    "moe": 4.050099943286642e-7,
+                    "rme": 5.732470556410842,
+                    "sem": 2.0663775220850216e-7,
+                    "deviation": 0.0000018249752134610003,
+                    "mean": 0.000007065191008713093,
+                    "variance": 3.3305345297470233e-12
+                  }
+                },
+                {
+                  "name": "Using defaults",
+                  "hz": 74299.3564971895,
+                  "aborted": false,
+                  "stats": {
+                    "moe": 0.0000013153741425489804,
+                    "rme": 9.773145234443167,
+                    "sem": 6.71109256402541e-7,
+                    "deviation": 0.000005534108700954803,
+                    "mean": 0.000013459066769142565,
+                    "variance": 3.062635911398366e-11
+                  }
+                }
+              ],
+              "fastest": [
+                "Basic converter"
+              ]
+            }
+          ]
+        }
+      ],
+      "started": "2018-05-26T14:43:40.665Z",
+      "ended": "2018-05-26T14:43:53.367Z"
     }
   },
   "N8.11.2": {
