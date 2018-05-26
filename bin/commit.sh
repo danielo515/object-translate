@@ -27,6 +27,6 @@ remote=https://$GITHUB_TOKEN@github.com/$TRAVIS_REPO_SLUG
 #     return 0
 # fi
 if ! git push --quiet --follow-tags "$remote" "$TRAVIS_BRANCH" > /dev/null 2>&1; then
-    err "failed to push git changes"
+    err "failed to push git changes to $remote $TRAVIS_BRANCH"
     exit 1
 fi
