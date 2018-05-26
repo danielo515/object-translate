@@ -1,8 +1,20 @@
 'use strict';
 const Op = require(`object-path`);
 const Traverse = require(`traverse`);
+const tryDefault = (method, src, path, altPath) => {
+  const def = Op[method](src, path);
+  return def === undefined ? Op[method](src, altPath) : def;
+};
 
-module.exports = (mapDefinition, defaults) => {
+/**
+ * @function {function name}
+ * @param  {Object} mapDefinition Mapping description describing the final shape you want and paths to where those values are
+ * @param  {Object} defaults      An object with default values on the same paths as the expected object
+ * @param  {Object} options       An object containing additional options
+ * @param  {String = $default} Options.defaultPath  Name of the default path when something does not exist on the defaults object
+ * @return {Function} A converter function with the provided configuration
+ */
+module.exports = (mapDefinition, defaults, {defaultPath = `$default`} = {}) => {
 
   defaults = defaults || {};
 
@@ -19,7 +31,7 @@ module.exports = (mapDefinition, defaults) => {
         const hasAlternatives = isObject && Array.isArray(item.alternatives);
         const hasProcessor = isObject && typeof item.processor === `function`;
         // not leaf, not alternatives, no processor, this means a regular object so skip
-        // it
+        // it to traverse it later
         if (!hasAlternatives && !hasProcessor) {
           return;
         }
@@ -41,7 +53,9 @@ module.exports = (mapDefinition, defaults) => {
 
       let originalValue = Op[getMethod](originalObj, path);
       // try to use a default value  ONLY if the original value is undefined. Values like false, 0, '', null, will pass as they are
-      originalValue = originalValue === undefined ? Op[getMethod](defaults, path) : originalValue;
+      originalValue = originalValue === undefined
+        ? tryDefault(getMethod, defaults, path, defaultPath)
+        : originalValue;
 
       const newValue = process(originalValue, originalObj);
 

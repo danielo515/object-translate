@@ -92,7 +92,90 @@ describe(`object-translate`, () => {
 
     });
   });
+  describe(`Using defaults`, () => {
+    it(`Should pick non existing values from matching defaults`, () => {
 
+      const original = {
+        a: {
+          b: {
+            c: `cvalue`
+          }
+        }
+      };
+      const defaults = {
+        d: {
+          e: {
+            f: `fvalue`
+          }
+        }
+      };
+      const expected = {
+        c: `cvalue`,
+        f: `fvalue`
+      };
+
+      const converter = Generator({c: `a.b.c`, f: `d.e.f`}, defaults);
+      const result = converter(original);
+      expect(result).toEqual(expected);
+
+    });
+    it(`Values not existing on original neither on defaults should fallback to the $default path`, () => {
+
+      const original = {
+        a: {
+          b: {
+            c: `cvalue`
+          }
+        }
+      };
+      const defaults = {
+        $default: `NA`,
+        d: {
+          e: {
+            f: `fvalue`
+          }
+        }
+      };
+      const expected = {
+        c: `cvalue`,
+        f: `fvalue`,
+        x: `NA`
+      };
+
+      const converter = Generator({c: `a.b.c`, f: `d.e.f`, x: `d.e.f.x`}, defaults);
+      const result = converter(original);
+      expect(result).toEqual(expected);
+
+    });
+    it(`The default fallback path should be configurable`, () => {
+
+      const original = {
+        a: {
+          b: {
+            c: `cvalue`
+          }
+        }
+      };
+      const defaults = {
+        $myDefault: `NA`,
+        d: {
+          e: {
+            f: `fvalue`
+          }
+        }
+      };
+      const expected = {
+        c: `cvalue`,
+        f: `fvalue`,
+        x: `NA`
+      };
+
+      const converter = Generator({c: `a.b.c`, f: `d.e.f`, x: `d.e.f.x`}, defaults, {defaultPath: `$myDefault`});
+      const result = converter(original);
+      expect(result).toEqual(expected);
+
+    });
+  });
   describe(`Advanced usage`, () => {
 
     it(`Should pick the first alternative that matches`, () => {
