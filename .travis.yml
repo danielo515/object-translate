@@ -6,11 +6,11 @@ node_js:
   - "9"
 script:
   - npm run lint:test
-  - npm run benchmark:report
+  - 'bash bin/run_report.sh'
 cache:
   yarn: true
   directories:
     - node_modules
 after_success: 
   - 'npm run coveralls'
-  - 'bin/commit.sh'
+  - 'bash bin/commit.sh'

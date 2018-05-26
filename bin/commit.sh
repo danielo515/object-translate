@@ -1,6 +1,6 @@
 #!/bin/bash
 
-    # make Travis CI skip this build
+# make Travis CI skip this build
 if ! git commit -m "Travis CI update [ci skip]"; then
     err "failed to commit updates"
     return 1
