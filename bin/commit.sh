@@ -1,4 +1,18 @@
 #!/bin/bash
+node_version=$(node -v);
+
+function msg() {
+    echo "travis-commit: $*"
+}
+
+function err() {
+    msg "$*" 1>&2
+}
+
+if  [ ${node_version:1:1} -gt 6 ]; then
+    err "Nothing to commit on node 6"
+    exit 0
+fi
 
 # make Travis CI skip this build
 if ! git commit -m "Travis CI update [ci skip]"; then
@@ -16,11 +30,3 @@ if ! git push --quiet --follow-tags "$remote" "$TRAVIS_BRANCH" > /dev/null 2>&1;
     err "failed to push git changes"
     return 1
 fi
-
-function msg() {
-    echo "travis-commit: $*"
-}
-
-function err() {
-    msg "$*" 1>&2
-}
