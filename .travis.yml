@@ -1,14 +1,16 @@
 language: node_js
 node_js:
-  - "4"
   - "5"
   - "6"
   - "8"
+  - "9"
 script:
   - npm run lint:test
-  - npm run benchmark:console
+  - npm run benchmark:report
 cache:
   yarn: true
   directories:
     - node_modules
-after_success: 'npm run coveralls'
+after_success: 
+  - 'npm run coveralls'
+  - 'bin/commit.sh'
