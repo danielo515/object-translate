@@ -1,0 +1,64 @@
+{
+  "N8.9.4": {
+    "1.0.0": {
+      "platform": {
+        "description": "Node.js 8.9.4 on Win32 64-bit",
+        "layout": null,
+        "manufacturer": null,
+        "name": "Node.js",
+        "prerelease": null,
+        "product": null,
+        "ua": null,
+        "version": "8.9.4",
+        "os": {
+          "architecture": 64,
+          "family": "Win32",
+          "version": null
+        }
+      },
+      "files": [
+        {
+          "name": "C:\\Users\\rdani\\Dropbox\\programacion\\node\\object-translate\\__benchmarks__\\report-json/src/_basic.js",
+          "suites": [
+            {
+              "name": "4 nest levels",
+              "benchmarks": [
+                {
+                  "name": "Basic converter",
+                  "hz": 165640.18594310517,
+                  "aborted": false,
+                  "stats": {
+                    "moe": 1.4346621272262202e-7,
+                    "rme": 2.3763770151928187,
+                    "sem": 7.319704730746022e-8,
+                    "deviation": 6.944081624720084e-7,
+                    "mean": 0.0000060371823075801454,
+                    "variance": 4.822026961077513e-13
+                  }
+                },
+                {
+                  "name": "Using defaults",
+                  "hz": 103028.45682340284,
+                  "aborted": false,
+                  "stats": {
+                    "moe": 2.2288888017834302e-7,
+                    "rme": 2.296389736787102,
+                    "sem": 1.1371881641752195e-7,
+                    "deviation": 0.00000112000045228473,
+                    "mean": 0.000009706056276413632,
+                    "variance": 1.2544010131179996e-12
+                  }
+                }
+              ],
+              "fastest": [
+                "Basic converter"
+              ]
+            }
+          ]
+        }
+      ],
+      "started": "2018-05-26T12:17:53.847Z",
+      "ended": "2018-05-26T12:18:07.051Z"
+    }
+  }
+}
