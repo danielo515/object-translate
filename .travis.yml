@@ -6,6 +6,7 @@ node_js:
   - "8"
 script:
   - npm run lint:test
+  - npm run benchmark:console
 cache:
   yarn: true
   directories:
