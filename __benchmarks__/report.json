@@ -304,5 +304,67 @@
       "started": "2018-05-26T15:02:21.683Z",
       "ended": "2018-05-26T15:02:33.109Z"
     }
+  },
+  "N9.11.2": {
+    "1.0.1": {
+      "platform": {
+        "description": "Node.js 9.11.2 on Linux 64-bit",
+        "layout": null,
+        "manufacturer": null,
+        "name": "Node.js",
+        "prerelease": null,
+        "product": null,
+        "ua": null,
+        "version": "9.11.2",
+        "os": {
+          "architecture": 64,
+          "family": "Linux",
+          "version": null
+        }
+      },
+      "files": [
+        {
+          "name": "/home/travis/build/danielo515/object-translate/__benchmarks__/report-json/src/_basic.js",
+          "suites": [
+            {
+              "name": "4 nest levels",
+              "benchmarks": [
+                {
+                  "name": "Basic converter",
+                  "hz": 134315.22531832426,
+                  "aborted": false,
+                  "stats": {
+                    "moe": 2.561156121676488e-7,
+                    "rme": 3.44002261558383,
+                    "sem": 1.3067123069778e-7,
+                    "deviation": 0.0000011540570616315517,
+                    "mean": 0.000007445172337164465,
+                    "variance": 1.331847701501651e-12
+                  }
+                },
+                {
+                  "name": "Using defaults",
+                  "hz": 82375.44492267737,
+                  "aborted": false,
+                  "stats": {
+                    "moe": 3.847011568522371e-7,
+                    "rme": 3.1689928957971727,
+                    "sem": 1.9627610043481486e-7,
+                    "deviation": 0.0000017773556828489895,
+                    "mean": 0.000012139539894912387,
+                    "variance": 3.1589932233555976e-12
+                  }
+                }
+              ],
+              "fastest": [
+                "Basic converter"
+              ]
+            }
+          ]
+        }
+      ],
+      "started": "2018-10-04T13:59:00.828Z",
+      "ended": "2018-10-04T13:59:12.466Z"
+    }
   }
 }
