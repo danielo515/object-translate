@@ -59,7 +59,7 @@
     "cz-conventional-changelog": "^2.0.0",
     "eslint": "^4.19.1",
     "eslint-config-devine": "^1.6.1",
-    "eslint-plugin-babel": "^4.0.0",
+    "eslint-plugin-babel": "^5.0.0",
     "husky": "^0.14.3",
     "jest": "^21.1.0",
     "release-it": "^5.0.0",
