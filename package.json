@@ -52,7 +52,7 @@
     "babel-preset-es2015": "^6.16.0",
     "benchmarked": "^2.0.0",
     "benchr": "^4.3.0",
-    "commitizen": "^2.9.6",
+    "commitizen": "^3.1.0",
     "conventional-recommended-bump": "^1.0.0",
     "coveralls": "^3.0.0",
     "cross-env": "^5.1.3",
