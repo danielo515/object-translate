@@ -366,5 +366,67 @@
       "started": "2020-02-29T08:00:24.079Z",
       "ended": "2020-02-29T08:00:35.679Z"
     }
+  },
+  "N8.17.0": {
+    "1.0.1": {
+      "platform": {
+        "description": "Node.js 8.17.0 on Linux 64-bit",
+        "layout": null,
+        "manufacturer": null,
+        "name": "Node.js",
+        "prerelease": null,
+        "product": null,
+        "ua": null,
+        "version": "8.17.0",
+        "os": {
+          "architecture": 64,
+          "family": "Linux",
+          "version": null
+        }
+      },
+      "files": [
+        {
+          "name": "/home/travis/build/danielo515/object-translate/__benchmarks__/report-json/src/_basic.js",
+          "suites": [
+            {
+              "name": "4 nest levels",
+              "benchmarks": [
+                {
+                  "name": "Basic converter",
+                  "hz": 183834.88996438758,
+                  "aborted": false,
+                  "stats": {
+                    "moe": 1.3435972324592317e-7,
+                    "rme": 2.470000493855985,
+                    "sem": 6.855087920710366e-8,
+                    "deviation": 6.357147012974883e-7,
+                    "mean": 0.000005439663821126227,
+                    "variance": 4.0413318144575477e-13
+                  }
+                },
+                {
+                  "name": "Using defaults",
+                  "hz": 107949.94945819868,
+                  "aborted": false,
+                  "stats": {
+                    "moe": 2.162659551041511e-7,
+                    "rme": 2.3345898923022177,
+                    "sem": 1.1033977301232199e-7,
+                    "deviation": 0.0000010112807239864222,
+                    "mean": 0.000009263552276022406,
+                    "variance": 1.0226887027065023e-12
+                  }
+                }
+              ],
+              "fastest": [
+                "Basic converter"
+              ]
+            }
+          ]
+        }
+      ],
+      "started": "2020-08-26T22:27:22.462Z",
+      "ended": "2020-08-26T22:27:34.082Z"
+    }
   }
 }
